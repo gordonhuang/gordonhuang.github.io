@@ -22,8 +22,6 @@ async function refreshToken() {
         if (response.ok) {
             const data = await response.json();
             globalAccessToken = data.access_token;
-            // Store the new access token and use it for subsequent requests
-            // For example, you can save it to local storage or a variable
             return globalAccessToken;
         } else {
             console.error("Error refreshing token:", response.statusText);
@@ -43,6 +41,7 @@ function updateSong(songID) {
 
 function changeNeeded(newSong) {
     let currentSong = document.getElementById("spotify-embed").src;
+    // Dissecting URL to obtain song ID
     let song = currentSong.substring(0, currentSong.length - 21);
     song = song.substring(song.length - 22);
     return song !== newSong;
@@ -57,22 +56,24 @@ function getCurrentSong() {
     })
     .then(response => response.json())
     .then(data => {
+        // If song is currently playing
         if (data.is_playing) {
-           if (changeNeeded(data.item.id)) {
-                updateSong(data.item.id);
-           }
-           
-           let text = document.getElementById("current-text");
-           if (text.textContent !== "I'm currently listening to...") {
-               text.textContent = "I'm currently listening to...";
-           }
-
-        } else {
-            // Handle case where no track is playing
+            // Checks if song returned is the same as song playing
             if (changeNeeded(data.item.id)) {
                 updateSong(data.item.id);
             }
+            // Changing text to match status
+            let text = document.getElementById("current-text");
+            if (text.textContent !== "I'm currently listening to...") {
+                text.textContent = "I'm currently listening to...";
+            }
 
+        } else {
+            // Checks if song returned is the same as last played song
+            if (changeNeeded(data.item.id)) {
+                updateSong(data.item.id);
+            }
+            // Changing text to match status
             let text = document.getElementById("current-text");
             text.textContent = "I'm not listening to anything right now. Last played track..."
         }
@@ -87,7 +88,7 @@ function scrollCheck() {
     if (!document.getElementById("nav") || !document.getElementById("top")) {
         return;
     }
-    
+    // If user scrolled past landing page set visibility for navigation bar and back-to-top button 
     if (document.body.scrollTop > 700 || document.documentElement.scrollTop > 700) {
         document.getElementById("nav").style.top = "0";
         document.getElementById("top").classList.remove("hidden");
@@ -104,14 +105,16 @@ function jumpTo(id) {
     document.getElementById(id).scrollIntoView();
 }
 
+// Calls scrollCheck() everytime user scrolls
 window.onscroll = function() {
     scrollCheck();
 };
 
+// Initial function calls
 refreshToken();
 getCurrentSong();
 
 // Set interval to periodically update the track 
-setInterval(getCurrentSong, 2500); // 5 seconds
+setInterval(getCurrentSong, 2500); // 2.5 seconds
 // Refresh access token every 50 minutes
 setInterval(refreshToken, 3e+6)
