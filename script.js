@@ -104,7 +104,6 @@ window.onscroll = function() {
     scrollCheck();
 };
 
-scrollCheck();
 refreshToken();
 getCurrentSong();
 
