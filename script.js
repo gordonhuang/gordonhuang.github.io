@@ -84,7 +84,6 @@ function getCurrentSong() {
 
 // Checks if user scrolled past landing page to display navigation bar
 function scrollCheck() {
-    console.log("hey");
     if (!document.getElementById("nav") || !document.getElementById("top")) {
         return;
     }
