@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en-CA" ontouchmove>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>Gordon Huang</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+    <script src="script.js"></script>
+</head>
+
+<body onclick>
+    <!-- Navigation Bar -->
+    <div class="navigation-bar" id = "nav">
+        <a class="jump" onclick="jumpTo('home')"><strong>Home</strong></a>
+        <a class="jump" onclick="jumpTo('about')"><strong>About</strong></a>
+        <a class="jump" onclick="jumpTo('skills')"><strong>Skills</strong></a>
+        <a class="jump" onclick="jumpTo('projects')"><strong>Projects</strong></a>
+        <a class="jump" onclick="jumpTo('contact')"><strong>Contact</strong></a>
+    </div>
+    <!-- Introduction -->
+    <div class="landing-page" id="home">
+        <div class="intro">
+            <h1>Hello,<br>I'm <span style="color: #119ab8;">Gordon</span></h1>
+            <p><span style="color: #119ab8;">Toronto</span>-based Computer Science student</p>
+        </div>
+        <br>
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/gordon-huang03/" target="_blank" title="LinkedIn"><img src="images/linkedin.svg"></a>
+            <a href="https://github.com/gordonhuang" target="_blank" title="GitHub"><img src="images/github.svg"></a>
+            <a href="mailto: gordon.huang@torontomu.ca" title="Email"><img src="images/email.svg"></a>
+        </div>    
+    </div>
+    <div class="separator"></div>
+    <!-- About Me -->
+    <div class="about-page" id="about">
+        <div class="about-description">
+            <h1>About <span style="color:#119ab8;">Me</span></h1>
+            <p>Thanks for stopping by! 
+                <br><br>
+                My name is Gordon Huang and I am a third year <span style="color: #119ab8;"><strong>Computer Science</strong></span> student at <span style="color: #119ab8;"></spanstyle><strong>Toronto Metropolitan University</strong></span> 
+                (formerly <strong>Ryerson University</strong>). 
+                <br><br>
+                I enjoy learning new things and when I do, I absorb them quickly. 
+                In my spare time I get a kick out of spending time with my friends, playing videogames, and listening to music.
+            </p>
+        </div>
+        <div class="current-song">
+            <div><h1 id="current-text">I'm currently listening to...</h1></div>
+            <iframe id="spotify-embed" src="https://open.spotify.com/embed/track/0HNKMJ2EKCaT2EqcCBj1EH?utm_source=generator" width="100%;" height="225px;" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        </div>
+    </div>
+    <div class="separator"></div>
+    <!-- Skills -->
+     <div class="skills-page" id="skills">
+        <div class="skills-description">
+            <h1 style="text-align: center;">Skills</h1>
+            <div class="skills-inner">
+                <div class="skills-list">
+                    <strong>Programming</strong>
+                    <div class="skill"><img src="images/python.svg"><p> Python</p></div>
+                    <div class="skill"><img src="images/java.svg"><p>   Java</p></div>
+                    <div class="skill"><img src="images/sql.svg"><p>    SQL</p></div>
+                    <div class="skill"><img src="images/c.svg"><p>      C</p></div>
+                    <div class="skill"><img src="images/html5.svg"><p>  HTML</p></div>
+                    <div class="skill"><img src="images/css.svg"><p>    CSS</p></div>
+                </div>
+                <div class="skills-list">
+                    <strong>Technical</strong>
+                    <div class="skill"><img src="images/jira.svg" class="skill-logo"><p>    Jira</p></div>
+                    <div class="skill"><img src="images/figma.svg" class="skill-logo"><p>   Figma</p></div>
+                    <div class="skill"><img src="images/git.svg" class="skill-logo"><p>     Git</p></div>
+                    <div class="skill"><img src="images/mysql.svg" class="skill-logo"><p>   MySQL</p></div>
+                </div>
+            </div>
+        </div>
+     </div>
+     <div class="separator"></div>
+     <!-- Projects -->
+     <div class = "projects-page" id="projects">
+        <div class="projects-description">
+            <h1>Projects</h1>
+            <div class="projects-list">
+                <div class="project">
+                    <p><strong>Multi-Process File Handler</strong></p>
+                    <div class="tool-container">
+                        <div class="project-tool">C</div>
+                        <div class="project-tool">Bash</div>
+                    </div>
+                    <p>A system demonstrating task scheduling in a multi-process environment</p>
+                </div>
+                <div class="project">
+                    <p><strong>Library Manager</strong></p>
+                    <div class="tool-container">
+                        <div class="project-tool">Python</div>
+                        <div class="project-tool">MySQL</div>
+                    </div>
+                    <p>A library database management system with features for handling library operations</p>
+                </div>
+                <div class="project">
+                    <p><strong>E-Commerce Simulator</strong></p>
+                    <div class="tool-container">
+                        <div class="project-tool">Java</div>
+                    </div>
+                    <p>An e-commerce simulator featuring functionalities for item and order management</p>
+                </div>
+                <div class="project">
+                    <p><strong>Personal Website</strong></p>
+                    <div class="tool-container">
+                        <div class="project-tool">HTML</div>
+                        <div class="project-tool">JavaScript</div>
+                        <div class="project-tool">CSS</div>
+                    </div>                            
+                    <p>This website</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="separator"></div>
+     <!-- Contact Info -->
+    <div class="contact-page" id="contact">
+        <div class="contact-description">
+            <h1 style="text-align: center;">Let's Talk</h1>
+            <div class="contact-list">
+                <a href="https://www.linkedin.com/in/gordon-huang03/" target="_blank" title="LinkedIn"><img src="images/linkedin.svg"></a>
+                <a href="https://github.com/gordonhuang" target="_blank" title="GitHub"><img src="images/github.svg"></a>
+                <a href="mailto: gordon.huang@torontomu.ca" title="Email"><img src="images/email.svg"></a>
+            </div>
+        </div>
+    </div>
+    <!-- Back to Top Button -->
+    <a class="top-button hidden" id="top" onclick="jumpTo('home')"><img src="images/top.svg"></a>
+</body>
+</html>
