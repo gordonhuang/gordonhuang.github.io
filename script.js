@@ -3,7 +3,7 @@ let globalAccessToken = "";
 async function refreshToken() {
     const clientId = "1826b44bc6e545b099b45532a892815b";
     const clientSecret = "42531bceb4d94dab9d40d04b2cc90d30";
-    const refreshToken = "AQAMy8bplhBGkA75VbkPk0YHriX6nUk5M29WoDKAzVJfJWGtOdLJlEp-eRTZnxNhsMRWKuScno2o0wF7xISl7SNohWVbfanms6F_xhbWvJzQ8OxVFL4SdkwHczt7a01yf1M";
+    const refreshToken = "AQCnGsOZBzITLRmuwkwF2r8AsukA7W9TA0KYRRS3xDy3CQ9AlRBBLSrXMYqlgekIlLisdxCqlHdx6vH5ZjH2TDlh3AkNiN-q--tObUqM-HCaJOlnQ94jj76zP21EX-IZQCU";
     const base64Credentials = btoa(`${clientId}:${clientSecret}`);
     
     try {
@@ -80,7 +80,30 @@ function getCurrentSong() {
     })
     .catch(error => {
         console.error("Error fetching currently playing track:", error);
+        // Currently playing returns empty response, get lasted played song from history
+        lastPlayedSong();
+        let text = document.getElementById("current-text");
+        text.textContent = "I'm not listening to anything right now. Last played track..."
     });
+}
+
+// Function to get the last played song from recently played history
+function lastPlayedSong() {
+    fetch("https://api.spotify.com/v1/me/player/recently-played?limit=1", {
+        headers: {
+            "Authorization": "Bearer " + globalAccessToken
+        }
+    })
+    .then(response => response.json())
+    .then(data => {
+        song = data.items[0].track.id;
+        if (changeNeeded(song)) {
+            updateSong(song);
+        }
+    })
+    .catch(error => {
+        console.error("Error fetching recently played tracks:", error);
+    })
 }
 
 // Checks if user scrolled past landing page to display navigation bar
@@ -112,7 +135,10 @@ window.onscroll = function() {
 
 // Initial function calls
 refreshToken();
-getCurrentSong();
+// Waits 2 seconds for refreshToken() to finish before attempting to get current track
+setTimeout(() => {
+    getCurrentSong();
+}, 2000);
 
 // Set interval to periodically update the track 
 setInterval(getCurrentSong, 2500); // 2.5 seconds

@@ -1,1 +1,35 @@
-<svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 300" width="1667" height="2500"><style type="text/css">.st0{fill:#0acf83}.st1{fill:#a259ff}.st2{fill:#f24e1e}.st3{fill:#ff7262}.st4{fill:#1abcfe}</style><title>Figma.logo</title><desc>Created using Figma</desc><path id="path0_fill" class="st0" d="M50 300c27.6 0 50-22.4 50-50v-50H50c-27.6 0-50 22.4-50 50s22.4 50 50 50z"/><path id="path1_fill" class="st1" d="M0 150c0-27.6 22.4-50 50-50h50v100H50c-27.6 0-50-22.4-50-50z"/><path id="path1_fill_1_" class="st2" d="M0 50C0 22.4 22.4 0 50 0h50v100H50C22.4 100 0 77.6 0 50z"/><path id="path2_fill" class="st3" d="M100 0h50c27.6 0 50 22.4 50 50s-22.4 50-50 50h-50V0z"/><path id="path3_fill" class="st4" d="M200 150c0 27.6-22.4 50-50 50s-50-22.4-50-50 22.4-50 50-50 50 22.4 50 50z"/></svg>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 2500 2500">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #a259ff;
+      }
+
+      .cls-1, .cls-2, .cls-3, .cls-4, .cls-5 {
+        stroke-width: 0px;
+      }
+
+      .cls-2 {
+        fill: #1abcfe;
+      }
+
+      .cls-3 {
+        fill: #f24e1e;
+      }
+
+      .cls-4 {
+        fill: #0acf83;
+      }
+
+      .cls-5 {
+        fill: #ff7262;
+      }
+    </style>
+  </defs>
+  <path id="path0_fill" data-name="path0 fill" class="cls-4" d="M833.3,2500c230,0,416.7-186.7,416.7-416.7v-416.7h-416.7c-230,0-416.7,186.7-416.7,416.7s186.7,416.7,416.7,416.7Z"/>
+  <path id="path1_fill" data-name="path1 fill" class="cls-1" d="M416.7,1250c0-230,186.7-416.7,416.7-416.7h416.7v833.3h-416.7c-230,0-416.7-186.7-416.7-416.7Z"/>
+  <path id="path1_fill-2" data-name="path1 fill" class="cls-3" d="M416.7,416.7C416.7,186.7,603.3,0,833.3,0h416.7v833.3h-416.7c-230,0-416.7-186.7-416.7-416.7Z"/>
+  <path id="path2_fill" data-name="path2 fill" class="cls-5" d="M1250,0h416.7C1896.7,0,2083.3,186.7,2083.3,416.7s-186.7,416.7-416.7,416.7h-416.7V0Z"/>
+  <path id="path3_fill" data-name="path3 fill" class="cls-2" d="M2083.3,1250c0,230-186.7,416.7-416.7,416.7s-416.7-186.7-416.7-416.7,186.7-416.7,416.7-416.7,416.7,186.7,416.7,416.7Z"/>
+</svg>
