@@ -526,7 +526,7 @@ body {
 
 @media (max-width: 1000px) {
     .top-button img {
-        width: 45px;
-        height: 45px;
+        width: 25px;
+        height: 25px;
     }
 }
