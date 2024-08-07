@@ -8,12 +8,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
-    <script src="script.js"></script>
+    <link rel="icon" type="image/x-icon" href="images/favicon.svg">
+    <script defer src="script.js"></script>
 </head>
 
 <body onclick>
     <!-- Navigation Bar -->
     <div class="navigation-bar" id = "nav">
+        <img class="navigation-bar-logo" draggable=false src="images/navbarlogo.svg">
         <a class="jump" onclick="jumpTo('home')"><strong>Home</strong></a>
         <a class="jump" onclick="jumpTo('about')"><strong>About</strong></a>
         <a class="jump" onclick="jumpTo('skills')"><strong>Skills</strong></a>
@@ -21,13 +23,13 @@
         <a class="jump" onclick="jumpTo('contact')"><strong>Contact</strong></a>
     </div>
     <!-- Introduction -->
-    <div class="landing-page" id="home">
+    <div class="landing-page hidden" id="home">
         <div class="intro">
             <h1>Hello,<br>I'm <span style="color: #119ab8;">Gordon</span></h1>
             <p><span style="color: #119ab8;">Toronto</span>-based Computer Science student</p>
         </div>
         <br>
-        <div class="social-links">
+        <div class="social-links hidden">
             <a href="https://www.linkedin.com/in/gordon-huang03/" target="_blank" title="LinkedIn"><img src="images/linkedin.svg"></a>
             <a href="https://github.com/gordonhuang" target="_blank" title="GitHub"><img src="images/github.png"></a>
             <a href="mailto: gordon.huang@torontomu.ca" title="Email"><img src="images/email.svg"></a>
@@ -35,7 +37,7 @@
     </div>
     <div class="separator"></div>
     <!-- About Me -->
-    <div class="about-page" id="about">
+    <div class="about-page hidden" id="about">
         <div class="about-description">
             <h1>About <span style="color:#119ab8;">Me</span></h1>
             <p>Thanks for stopping by! 
@@ -54,30 +56,30 @@
     </div>
     <div class="separator"></div>
     <!-- Skills -->
-     <div class="skills-page" id="skills">
+     <div class="skills-page hidden" id="skills">
         <div class="skills-description">
             <h1 style="text-align: center;">Skills</h1>
             <div class="skills-inner">
                 <div class="skills-box">
                     <p><strong>Programming</strong></p>
                     <div class="skills-list">
-                        <div class="skill"><img src="images/python.svg"><p>     Python</p></div>
-                        <div class="skill"><img src="images/java.svg"><p>       Java</p></div>
-                        <div class="skill"><img src="images/sql.svg"><p>        SQL</p></div>
-                        <div class="skill"><img src="images/c.svg"><p>          C</p></div>
-                        <div class="skill"><img src="images/javascript.svg"><p> JavaScript</p></div>
-                        <div class="skill"><img src="images/bash.svg"><p>       Bash</p></div>
+                        <div class="skill hidden"><img src="images/python.svg"><p>     Python</p></div>
+                        <div class="skill hidden"><img src="images/java.svg"><p>       Java</p></div>
+                        <div class="skill hidden"><img src="images/sql.svg"><p>        SQL</p></div>
+                        <div class="skill hidden"><img src="images/c.svg"><p>          C</p></div>
+                        <div class="skill hidden"><img src="images/javascript.svg"><p> JavaScript</p></div>
+                        <div class="skill hidden"><img src="images/bash.svg"><p>       Bash</p></div>
                     </div>
                 </div>
                 <div class="skills-box">
                     <p><strong>Technical</strong></p>
                     <div class="skills-list">
-                        <div class="skill"><img src="images/jira.svg"><p>       Jira</p></div>
-                        <div class="skill"><img src="images/figma.svg"><p>      Figma</p></div>
-                        <div class="skill"><img src="images/git.svg"><p>        Git</p></div>
-                        <div class="skill"><img src="images/mysql.svg"><p>      MySQL</p></div>
-                        <div class="skill"><img src="images/html5.svg"><p>      HTML</p></div>
-                        <div class="skill"><img src="images/css.svg"><p>        CSS</p></div>                    
+                        <div class="skill hidden"><img src="images/jira.svg"><p>       Jira</p></div>
+                        <div class="skill hidden"><img src="images/figma.svg"><p>      Figma</p></div>
+                        <div class="skill hidden"><img src="images/git.svg"><p>        Git</p></div>
+                        <div class="skill hidden"><img src="images/mysql.svg"><p>      MySQL</p></div>
+                        <div class="skill hidden"><img src="images/html5.svg"><p>      HTML</p></div>
+                        <div class="skill hidden"><img src="images/css.svg"><p>        CSS</p></div>                    
                     </div>
                 </div>
             </div>
@@ -85,7 +87,7 @@
      </div>
      <div class="separator"></div>
      <!-- Projects -->
-     <div class = "projects-page" id="projects">
+     <div class = "projects-page hidden" id="projects">
         <div class="projects-description">
             <h1>Projects</h1>
             <div class="projects-list">
@@ -126,17 +128,17 @@
     </div>
     <div class="separator"></div>
      <!-- Contact Info -->
-    <div class="contact-page" id="contact">
+    <div class="contact-page hidden" id="contact">
         <div class="contact-description">
             <h1 style="text-align: center;">Let's Talk</h1>
             <div class="contact-list">
-                <a href="https://www.linkedin.com/in/gordon-huang03/" target="_blank" title="LinkedIn"><img src="images/linkedin.svg"></a>
-                <a href="https://github.com/gordonhuang" target="_blank" title="GitHub"><img src="images/github.png"></a>
-                <a href="mailto: gordon.huang@torontomu.ca" title="Email"><img src="images/email.svg"></a>
+                <a class="hidden" href="https://www.linkedin.com/in/gordon-huang03/" target="_blank" title="LinkedIn"><img src="images/linkedin.svg"></a>
+                <a class="hidden" href="https://github.com/gordonhuang" target="_blank" title="GitHub"><img src="images/github.png"></a>
+                <a class="hidden" href="mailto: gordon.huang@torontomu.ca" title="Email"><img src="images/email.svg"></a>
             </div>
         </div>
     </div>
     <!-- Back to Top Button -->
-    <a class="top-button hidden" id="top" onclick="jumpTo('home')"><img src="images/top.png"></a>
+    <a class="top-button hiddenBar" id="top" onclick="jumpTo('home')"><img src="images/top.png"></a>
 </body>
 </html>

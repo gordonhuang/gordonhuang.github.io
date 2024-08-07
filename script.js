@@ -114,12 +114,12 @@ function scrollCheck() {
     // If user scrolled past landing page set visibility for navigation bar and back-to-top button 
     if (document.body.scrollTop > 700 || document.documentElement.scrollTop > 700) {
         document.getElementById("nav").style.top = "0";
-        document.getElementById("top").classList.remove("hidden");
-        document.getElementById("top").classList.add("visible");
+        document.getElementById("top").classList.remove("hiddenBar");
+        document.getElementById("top").classList.add("showBar");
     } else {
         document.getElementById("nav").style.top = "-100px";
-        document.getElementById("top").classList.remove("visible");
-        document.getElementById("top").classList.add("hidden");
+        document.getElementById("top").classList.remove("showBar");
+        document.getElementById("top").classList.add("hiddenBar");
     }
 }
 
@@ -135,12 +135,22 @@ window.onscroll = function() {
 
 // Initial function calls
 refreshToken();
-// Waits 2 seconds for refreshToken() to finish before attempting to get current track
-setTimeout(() => {
-    getCurrentSong();
-}, 2000);
+getCurrentSong();
 
 // Set interval to periodically update the track 
 setInterval(getCurrentSong, 2500); // 2.5 seconds
 // Refresh access token every 50 minutes
 setInterval(refreshToken, 3e+6)
+
+// Sets visibility for text as user scrolls down
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        console.log(entry);
+        if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+        }
+    });
+});
+
+const hiddenElements = document.querySelectorAll(".hidden");
+hiddenElements.forEach((element) => observer.observe(element));

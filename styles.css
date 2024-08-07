@@ -36,6 +36,13 @@ body {
     cursor: pointer;
 }
 
+.navigation-bar-logo {
+    position: absolute; 
+    left: 0.5%; 
+    width: 45px; 
+    height: 45px;
+}
+
 @media (max-width: 1000px) {
     .navigation-bar {
         justify-content: space-around;
@@ -44,6 +51,10 @@ body {
     .navigation-bar a {
         font-size: 14px;
         margin-right: 0px;
+    }
+
+    .navigation-bar-logo {
+        opacity: 0;
     }
 }
 
@@ -70,6 +81,19 @@ body {
     100% {
         background-position: 200% 0%;
     }
+}
+
+.hidden {
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateX(-100%);
+    transition: all 1.25s;
+}
+
+.show {
+    opacity: 1;
+    filter: blur(0px);
+    transform: translateX(0%);
 }
 
 .landing-page {
@@ -275,6 +299,14 @@ body {
     height: 85px;
 }
 
+.skill:nth-child(odd) {
+    transition-delay: 300ms;
+}
+
+.skill:nth-child(even) {
+    transition-delay: 250ms;
+}
+
 .skill p {
     width: 125px;
     font-size: 20px;
@@ -464,6 +496,18 @@ body {
     justify-content: center;    
 }
 
+.contact-list a:nth-child(1) {
+    transition-delay: 200ms;
+}
+
+.contact-list a:nth-child(2) {
+    transition-delay: 600ms;
+}
+
+.contact-list a:nth-child(3) {
+    transition-delay: 800ms;
+}
+
 .contact-list img {
     width: 100px;
     height: 100px;
@@ -504,13 +548,13 @@ body {
     cursor: pointer;
 }
 
-.hidden {
+.hiddenBar {
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.5s, visibility 0.5s;
 }
 
-.visible {
+.showBar {
     opacity: 1;
     visibility: visible;
     transition: opacity 0.5s, visibility 0.5s;
