@@ -31,7 +31,7 @@ body {
 }
 
 .navigation-bar a:hover {
-    color: #5011b8;
+    color: #3f11b8;
     transition: 0.3s;
     cursor: pointer;
 }
@@ -161,6 +161,7 @@ body {
     width: 50px;
     height: 50px;
     margin: 0 15px;
+    -webkit-user-drag: none;
 }
 
 .about-page {
@@ -322,6 +323,7 @@ body {
     background: rgb(139, 139, 139, 0.55);
     padding: 5px;
     border-radius: 15px;
+    -webkit-user-drag: none;
 }
 
 @media (max-width: 1650px) {
@@ -501,17 +503,18 @@ body {
 }
 
 .contact-list a:nth-child(2) {
-    transition-delay: 600ms;
+    transition-delay: 400ms;
 }
 
 .contact-list a:nth-child(3) {
-    transition-delay: 800ms;
+    transition-delay: 600ms;
 }
 
 .contact-list img {
     width: 100px;
     height: 100px;
     margin: 0px 25px;
+    -webkit-user-drag: none;
 }
 
 @media (max-width: 1650px) {
@@ -566,6 +569,7 @@ body {
     background-color: #119ab8;
     border-radius: 12px;
     padding: 10px 10px;
+    -webkit-user-drag: none;
 }
 
 @media (max-width: 1000px) {
