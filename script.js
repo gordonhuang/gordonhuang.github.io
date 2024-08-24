@@ -1,5 +1,4 @@
 let globalAccessToken = "";
-let lastSong = "";
 
 async function refreshToken() {
     const clientId = "1826b44bc6e545b099b45532a892815b";
@@ -62,14 +61,12 @@ function getCurrentSong() {
             // Checks if song returned is the same as song playing
             if (changeNeeded(data.item.id)) {
                 updateSong(data.item.id);
-                lastSong = data.item.id;
             }
             // Changing text to match status
             let text = document.getElementById("current-text");
             if (text.textContent !== "I'm currently listening to...") {
                 text.textContent = "I'm currently listening to...";
             }
-
         } else {
             // Checks if song returned is the same as last played song
             if (changeNeeded(data.item.id)) {
@@ -83,10 +80,29 @@ function getCurrentSong() {
     .catch(error => {
         console.error("Error fetching currently playing track:", error);
         // Currently playing returns empty response, get lasted played song from history
-        updateSong(lastSong);
+        lastPlayedSong();
         let text = document.getElementById("current-text");
         text.textContent = "I'm not listening to anything right now. Last played track..."
     });
+}
+
+// Function to get the last played song from recently played history
+function lastPlayedSong() {
+    fetch("https://api.spotify.com/v1/me/player/recently-played?limit=1", {
+        headers: {
+            "Authorization": "Bearer " + globalAccessToken
+        }
+    })
+    .then(response => response.json())
+    .then(data => {
+        song = data.items[0].track.id;
+        if (changeNeeded(song)) {
+            updateSong(song);
+        }
+    })
+    .catch(error => {
+        console.error("Error fetching recently played tracks:", error);
+    })
 }
 
 // Checks if user scrolled past landing page to display navigation bar
